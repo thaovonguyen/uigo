@@ -1,25 +1,27 @@
 import '../styles/homepage.css';
-
-function Homepage() {
+import logo from '../picture/logo.png'
+function Homepage(){
     return(
         <div class="hpbackground">
             
             <div class="main">
                 <div>
-                    NƠI NÀY ĐỂ LOGO UIgo
+                <img className="logoUI" src={logo} alt="logoUI" />
                 </div>
 
 
-                <div class="script">
-                    Này là script dưới logo nè
+                <div class="script" style={{width: '40%'}}>
+                    Chào bạn, chúng mình cung cấp cho các bạn scheme màu theo mong muốn và hướng dẫn sử dụng schema màu này cho 
                 </div>
             </div>
-
-
-
-            <div>
-                Div chú thích cho việc scroll xuống ó
-            </div>
+            <div class="footpage">
+                <div>
+                    <a href='#'>
+                        <img className="logoUI" src={logo} alt="logoUI" />
+                    </a>
+                </div>
+                Scroll to start
+            </div>            
         </div>
     )
 }
