@@ -1,6 +1,6 @@
 import '../styles/homepage.css';
 
-function Homepage(){
+function Homepage() {
     return(
         <div class="hpbackground">
             
