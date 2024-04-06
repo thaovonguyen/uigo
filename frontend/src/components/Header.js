@@ -6,9 +6,9 @@ function Header(){
     return(
         <div class="headercomponent">
             <div>
-                <NavLink to="/">
+                <Link to=' '>
                     <img class="logoheader " src={logo}></img>
-                </NavLink>
+                </Link>
             </div>
             <Navbar />
         </div>
