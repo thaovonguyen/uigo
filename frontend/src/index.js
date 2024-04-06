@@ -6,12 +6,9 @@ import WelcomePage from './pages/welcome';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './pages/Homepage';
 import Navbar from './Navbar';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Navbar /> */}
-    {/* <Homepage /> */}
     <App />
   </React.StrictMode>
 );
