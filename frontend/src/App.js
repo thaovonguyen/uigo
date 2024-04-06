@@ -11,6 +11,7 @@ import {
 import Homepage from './pages/Homepage';
 import WelcomePage from './pages/welcome';
 import ColorGenPage from './pages/ColorGen.js';
+import FontGenPage from './pages/FontGen.js';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Homepage />} /> 
         <Route path="/welcomepage" element={<WelcomePage/>} />
           {/* <Route path="/welcomepage" element={<WelcomePage/>}/> */}
+        <Route path="/fontgen" element={<FontGenPage/>} />
         <Route path="/colorgen" element={<ColorGenPage/>} />
       </Routes>
     </Router>

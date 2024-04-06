@@ -28,7 +28,7 @@ function Navbar(){
                     <div><a class="dropdown-item" href='#'>Trang chủ</a></div>
                     <div><a class="dropdown-item" href='/colorgen'>Color Generator</a></div>
                     <div><a class="dropdown-item" href='#'>Color TBalette</a></div>
-                    <div><a class="dropdown-item" href='#'>Font Pair</a></div>
+                    <div><a class="dropdown-item" href='/fontgen'>Font Pair</a></div>
                 </div>}
             </div>
         </>
