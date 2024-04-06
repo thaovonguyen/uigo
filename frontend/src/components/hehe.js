@@ -2,17 +2,6 @@ import React, { useEffect } from 'react';
 import iro from '@jaames/iro';
 
 function WelcomePage() {
-    // useEffect(() => {
-    //     const defaultPicker = () =>
-    //         iro.ColorPicker("#defaultPicker", {
-    //             width: 250,
-    //             color: "#f00",
-    //             borderWidth: 1,
-    //             borderColor: "#fff"
-    //         });
-    //     return defaultPicker;
-    // }, []);
-
     useEffect(() => {
         const boxPicker = () =>
             iro.ColorPicker("#boxPicker", {
