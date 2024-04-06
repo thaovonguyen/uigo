@@ -10,6 +10,10 @@
     flex-direction: column;
 }
 
+.logoUI{
+    height: 30vh;
+}
+
 .script{
     display: flex;
     justify-content: center;

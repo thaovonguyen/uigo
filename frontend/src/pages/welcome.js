@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import iro from '@jaames/iro';
-
+import Header from "../components/Header"
 function WelcomePage() {
     useEffect(() => {
         const boxPicker = () =>
@@ -26,14 +26,18 @@ function WelcomePage() {
     }, []);
 
     return (
-        <div>
-            <div className="Grid">
-                <div className="ColorPicker" id="boxPicker">
-                    <h3>hehe</h3>
-                    <boxPicker />
+        <>
+            <Header />
+            <div>
+                <div className="Grid">
+                    <div className="ColorPicker" id="boxPicker">
+                        <h3>hehe</h3>
+                        <boxPicker />
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
+
     );
 }
 

@@ -9,14 +9,15 @@ import {
 } from "react-router-dom";
 
 import Homepage from './pages/Homepage';
-
+import WelcomePage from './pages/welcome';
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Homepage />}>
-          <Route path='/' element={<Homepage />} />
-        </Route>
+        <Route path="/" element={<Homepage />} /> 
+        <Route path="/welcomepage" element={<WelcomePage/>} />
+          {/* <Route path="/welcomepage" element={<WelcomePage/>}/> */}
+        
       </Routes>
     </Router>
   );
