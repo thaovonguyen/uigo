@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import iro from '@jaames/iro';
 import '../styles/main.css';
 
 function ColorGenPage() {
+    const boxPickerRef = useRef(null);
     useEffect(() => {
         const values = document.getElementById('values');
         const hexInput = document.getElementById('hexInput');
@@ -40,8 +41,11 @@ function ColorGenPage() {
             boxPicker.color.hexString = hexInput.value;
         })
 
+        boxPickerRef.current = boxPicker;
+
         return () => {
-            boxPicker.off("mount");
+            boxPickerRef.current.off("mount");
+            boxPickerRef.current.base.remove();
         };
     }, []);
 
@@ -50,7 +54,6 @@ function ColorGenPage() {
             {/* <div className="Grid" id="PickerWrap"> */}
                 <div className="ColorPicker" id="boxPicker">
                     <h3>Your Color Picker</h3>
-                    {/* <boxPicker /> */}
                 </div>
                 <div id="Values">
                     <span className="title">Selected Color: </span>
