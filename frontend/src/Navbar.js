@@ -30,7 +30,6 @@ function Navbar(){
                 </div>}
             </div>
             
-            {/* Div sẽ hiển thị khi hover */}
 
         </>
     );
