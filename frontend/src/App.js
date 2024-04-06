@@ -19,6 +19,7 @@ function App() {
           {/* <Route path="/welcomepage" element={<WelcomePage/>}/> */}
         
       </Routes>
+      
     </Router>
   );
 }
