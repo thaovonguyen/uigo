@@ -10,6 +10,8 @@ import {
 
 import Homepage from './pages/Homepage';
 import WelcomePage from './pages/welcome';
+import ColorGenPage from './pages/ColorGen.js';
+
 function App() {
   return (
     <Router>
@@ -17,7 +19,7 @@ function App() {
         <Route path="/" element={<Homepage />} /> 
         <Route path="/welcomepage" element={<WelcomePage/>} />
           {/* <Route path="/welcomepage" element={<WelcomePage/>}/> */}
-        
+        <Route path="/colorgen" element={<ColorGenPage/>} />
       </Routes>
     </Router>
   );
