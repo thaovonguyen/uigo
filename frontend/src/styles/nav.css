@@ -1,0 +1,32 @@
+.navcontainer{
+    position: fixed;
+    top: 0;
+    right: 50px;
+    background-color: #fff;
+    z-index: 5; 
+
+}
+
+.hover-div{
+    position: fixed;
+    border: 1px solid;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 10px;
+
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+.menuicon {
+    width: 30px;
+}
