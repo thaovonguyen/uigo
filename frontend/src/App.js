@@ -15,16 +15,17 @@ import MiniContactpage from './components/miniContactpage';
 import MiniFeature from './components/miniFeature';
 import LayoutSample from './pages/LayoutSample';
 import ColorGenPage from './pages/ColorGen';
+import FontGenPage from './pages/FontGen'
 function App() {
   return (
     <Router>
       <Routes>
         {/* <Route exact path="/"  element={<LayoutSample  prime="#FFF94A" secondary="blue" sup1="green" sup2="red" sup3="blue"/>} /> */}
-        {/* <Route exact path="/"  element={<Homepage />} /> 
-        <Route path="/welcomepage" element={<WelcomePage/>} />
-          {/* <Route path="/welcomepage" element={<WelcomePage/>}/> */}
-        <Route path="/fontgen" element={<FontGenPage/>} />
-        <Route path="/colorgen" element={<ColorGenPage/>} />
+        <Route exact path="/"  element={<LayoutSample />} /> 
+        {/* <Route path="/welcomepage" element={<WelcomePage/>} /> */}
+          {/* <Route path="/welcomepage" element={<WelcomePage/>}/>
+        {/* <Route path="/fontgen" element={<FontGenPage/>} />
+        <Route path="/colorgen" element={<ColorGenPage/>} /> */}
       </Routes>
       
     </Router>
