@@ -60,7 +60,7 @@ function monochromaticColor(baseColorHex, numColors = 5, lightnessStep = 10) {
 }
 
 function analogousColor(baseColorHex, hueVariation = 60) {
-    var saturation = getRandomNumber(0, 100);
+    var saturation = getRandomNumber(0, 80);
     var lightness = getRandomNumber(0, 100);
     var colors = [baseColorHex];
     var mono = monochromaticColor(baseColorHex, 3, 20);
