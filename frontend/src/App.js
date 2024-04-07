@@ -20,14 +20,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route exact path="/"  element={<LayoutSample  prime="#FFF94A" secondary="blue" sup1="green" sup2="red" sup3="blue"/>} /> */}
-        <Route exact path="/"  element={<LayoutSample />} /> 
-        {/* <Route path="/welcomepage" element={<WelcomePage/>} /> */}
-          {/* <Route path="/welcomepage" element={<WelcomePage/>}/>
-        {/* <Route path="/fontgen" element={<FontGenPage/>} />
-        <Route path="/colorgen" element={<ColorGenPage/>} /> */}
-      </Routes>
-      
+        {/* <Route exact path="/"  element={<MiniFeature prime="#FFF94A" secondary="blue" sup1="green" sup2="red" sup3="blue"/>} /> */}
+        {/* <Route exact path="/"  element={<Homepage />} /> 
+        <Route path="/welcomepage" element={<WelcomePage/>} />
+          {/* <Route path="/welcomepage" element={<WelcomePage/>}/> */}
+        <Route path="/" element={<Homepage/>} />
+        <Route path="/gen" element={<ColorGenPage/>} />
+        <Route path="/gen/layout" element={<LayoutSample/>} />
+    </Routes>
     </Router>
   );
 }

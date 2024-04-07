@@ -14,6 +14,8 @@ root.render(
   <React.StrictMode>
     <App />
     {/* <ColorGenPage /> */}
+    <App />
+    {/* <ColorGenPage /> */}
   </React.StrictMode>
 );
 
