@@ -9,7 +9,7 @@ function MiniFeature(props) {
         color: secondary, // Set text color based on the prop
     };
     const bodyStyle1 = {
-        backgroundColor: sup2, // Set background color based on the prop
+        backgroundColor: sup1, // Set background color based on the prop
         color: secondary, // Set text color based on the prop
     };
     const tabStyle1 = { 

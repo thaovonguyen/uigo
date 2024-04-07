@@ -61,26 +61,26 @@ function MiniHomepage1(props) {
             </header>
             <section class="text-center bg-light features-icons">
                 <div class="lcontainer">
-                    <div class="row">
+                    <div class="row" >
                         <div class="col-lg-4">
                             <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                                <div class="d-flex features-icons-icon"><i class="icon-screen-desktop m-auto" style={tabStyle2} data-bss-hover-animate="pulse"></i></div>
-                                <h3 style={tabStyle1}>Fully Responsive</h3>
-                                <p class="lead mb-0" style={tabStyle2}>This theme will look great on any device, no matter the size!</p>
+                                <div class="d-flex features-icons-icon"><i class="icon-screen-desktop m-auto" style={tabStyle3} data-bss-hover-animate="pulse"></i></div>
+                                <h3 style={tabStyle3}>Fully Responsive</h3>
+                                <p class="lead mb-0" style={tabStyle3}>This theme will look great on any device, no matter the size!</p>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                                <div class="d-flex features-icons-icon"><i class="icon-layers m-auto" style={tabStyle2} data-bss-hover-animate="pulse"></i></div>
-                                <h3 style={tabStyle1}>Bootstrap 5 Ready</h3>
-                                <p class="lead mb-0" style={tabStyle2}>Featuring the latest build of the new Bootstrap 5 framework!</p>
+                                <div class="d-flex features-icons-icon"><i class="icon-layers m-auto" style={tabStyle3} data-bss-hover-animate="pulse"></i></div>
+                                <h3 style={tabStyle3}>Bootstrap 5 Ready</h3>
+                                <p class="lead mb-0" style={tabStyle3}>Featuring the latest build of the new Bootstrap 5 framework!</p>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                                <div class="d-flex features-icons-icon"><i class="icon-check m-auto" style={tabStyle2} data-bss-hover-animate="pulse"></i></div>
-                                <h3 style={tabStyle1}>Easy to Use</h3>
-                                <p class="lead mb-0" style={tabStyle2}>Ready to use with your own content, or customize the source files!</p>
+                                <div class="d-flex features-icons-icon"><i class="icon-check m-auto" style={tabStyle3} data-bss-hover-animate="pulse"></i></div>
+                                <h3 style={tabStyle3}>Easy to Use</h3>
+                                <p class="lead mb-0" style={tabStyle3}>Ready to use with your own content, or customize the source files!</p>
                             </div>
                         </div>
                     </div>
