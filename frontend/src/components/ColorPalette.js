@@ -1,28 +1,21 @@
-// const ColorPalette = () => {
-//     const colors = ['#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FFFF33'];
-//     return (
-//         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', flexDirection: 'column', backgroundColor: 'whitesmoke' , padding: '1vh'}}>
-//             {colors.map((color, index) => (
-//                 <div
-//                     key={index}
-//                     style={{
-//                         backgroundColor: color,
-//                         width: '20vh',
-//                         height: '20vh',
-//                         margin: '1vh',
-//                         borderRadius: '5px',
-//                     }}
-//                 />
-//             ))}
-//         </div>
-//     );
-// }
-
-// export default ColorPalette;
-
 import React, { useState } from 'react';
 import '../styles/layout.css';
 import { randomFunction } from '../color_gen.js';
+
+function isBright(hexCode) {
+    // Chuyển đổi hex code thành giá trị RGB
+    let hex = hexCode.replace(/^#/, '');
+    let bigint = parseInt(hex, 16);
+    let r = (bigint >> 16) & 255;
+    let g = (bigint >> 8) & 255;
+    let b = bigint & 255;
+
+    // Tính toán độ sáng trung bình của màu
+    let brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+    // Kiểm tra xem màu có được coi là sáng hay không
+    return brightness > 127; // Đây là một giả định, bạn có thể thay đổi ngưỡng tùy ý
+}
 
 function ColorPalette(prop) {
     const { colorArray } = prop;
@@ -34,11 +27,20 @@ function ColorPalette(prop) {
         event.dataTransfer.setData('text/plain', JSON.stringify({ index, source }));
     };
 
+    const colorText = (backgroundColor) => {
+        if (isBright(backgroundColor)) {
+            return { color: 'black' }
+        } else {
+            return { color: 'white' }
+        }
+
+    };
+
     const handleDrop = (event, targetIndex, targetArray, setTargetArray) => {
         event.preventDefault();
         const data = JSON.parse(event.dataTransfer.getData('text/plain'));
         const { index, source } = data;
-        
+
         // Prevent dropping into the same array
         if (source === targetArray) return;
 
@@ -46,23 +48,23 @@ function ColorPalette(prop) {
         const updatedTargetArray = [...targetArray];
         updatedTargetArray.splice(targetIndex, 0, draggedColor);
         setTargetArray(updatedTargetArray);
-
-        // Remove item from source array
-        // if (source === colorArray) {
-        //     const updatedColorArray = [...colorArray];
-        //     updatedColorArray.splice(index, 1);
-        //     setColorArray(updatedColorArray);
-        // } else {
-        //     const updatedBaseColorArray = [...baseColorArray];
-        //     updatedBaseColorArray.splice(index, 1);
-        //     setBaseColorArray(updatedBaseColorArray);
-        // }
     };
 
     const handleDragOver = (event) => {
         event.preventDefault();
     };
-    
+
+    const [text, setText] = useState();
+    const handleCopyCLick = async () => {
+        try {
+            await navigator.clipboard.writeText(text)
+            alert("Copy to clipboard!")
+        }
+        catch (err) {
+            alert('Copy failed!')
+        }
+    }
+
     return (
         <div className="container">
             <div className="color-container">
@@ -72,12 +74,16 @@ function ColorPalette(prop) {
                             <div
                                 key={index}
                                 className="color-cell"
-                                style={{ backgroundColor: color }}
-                                // draggable
-                                // onDragStart={(event) => handleDragStart(event, index, colorArray)}
-                                // onDragOver={handleDragOver}
-                                // onDrop={(event) => handleDrop(event, index, colorArray, setColorArray)}
-                            />
+                                style={{ backgroundColor: color, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                                onClick={() => {
+                                    setText(color);
+                                    handleCopyCLick();
+                                }
+
+                                }
+                            >
+                                <p style={colorText(color)}>{color}</p>
+                            </div>
                         ))}
                     </div>
                     <div className="color-name align-items-center">Color Palette</div>
