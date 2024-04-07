@@ -27,20 +27,20 @@ function ColorPalette(prop) {
         event.dataTransfer.setData('text/plain', JSON.stringify({ index, source }));
     };
 
-    const colorText = (backgroundColor) =>{
-        if (isBright(backgroundColor)){
-            return {color: 'black'}
+    const colorText = (backgroundColor) => {
+        if (isBright(backgroundColor)) {
+            return { color: 'black' }
         } else {
-            return {color: 'white'}
+            return { color: 'white' }
         }
-        
+
     };
 
     const handleDrop = (event, targetIndex, targetArray, setTargetArray) => {
         event.preventDefault();
         const data = JSON.parse(event.dataTransfer.getData('text/plain'));
         const { index, source } = data;
-        
+
         // Prevent dropping into the same array
         if (source === targetArray) return;
 
@@ -53,7 +53,18 @@ function ColorPalette(prop) {
     const handleDragOver = (event) => {
         event.preventDefault();
     };
-    
+
+    const [text, setText] = useState();
+    const handleCopyCLick = async () => {
+        try {
+            await navigator.clipboard.writeText(text)
+            alert("Copy to clipboard!")
+        }
+        catch (err) {
+            alert('Copy failed!')
+        }
+    }
+
     return (
         <div className="container">
             <div className="color-container">
@@ -64,9 +75,14 @@ function ColorPalette(prop) {
                                 key={index}
                                 className="color-cell"
                                 style={{ backgroundColor: color, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-                                // onClick={() => navigator.clipboard.writeText(color.hexString)}
+                                onClick={() => {
+                                    setText(color);
+                                    handleCopyCLick();
+                                }
+
+                                }
                             >
-                            <p style={colorText(color)}>{color}</p>
+                                <p style={colorText(color)}>{color}</p>
                             </div>
                         ))}
                     </div>

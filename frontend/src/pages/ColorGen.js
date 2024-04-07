@@ -65,6 +65,12 @@ function ColorGenPage() {
         setColorArray(newColor);
     };
 
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            colorGen()
+        }
+    };
+
     return (
         <div>
             <Header />
@@ -81,7 +87,7 @@ function ColorGenPage() {
                     </div>
 
                     <div className="ButtonWrap">
-                        <button id="genBtn" onClick={colorGen} >Generate</button>
+                        <button id="genBtn" onClick={colorGen} onKeyDown={handleKeyPress} >Generate</button>
                         <button id="layoutBtn" rel="#">Go to Layout!</button>
                     </div>
                 </div>
