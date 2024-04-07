@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/layout.css';
 import { randomFunction } from '../color_gen.js';
+import LayoutComponent from '../components/LayoutComponent.js';
 
 function LayoutSample() {
     const baseColor = '#C16F66';
@@ -36,17 +37,25 @@ function LayoutSample() {
         // }
     };
 
+    const resetColor = () => {
+        setColorArray(baseColorArray);
+    };
+
     const handleDragOver = (event) => {
         event.preventDefault();
     };
     
     return (
         <div className="container">
-            <div className="mini-container">
+            <div className="mini-container" id = "layout-container">
                 <div className="mini-page">
-                    <div style={{ backgroundColor: colorArray[0] }}>This is a header</div>
+                    {/* <div style={{ backgroundColor: colorArray[0] }}>This is a header</div>
                     <div style={{ backgroundColor: colorArray[1] }}>This is the body</div>
-                    <div style={{ backgroundColor: colorArray[2] }}>This is a footer</div>
+                    <div style={{ backgroundColor: colorArray[2] }}>This is a footer</div> */}
+                    {<LayoutComponent colorArray />}
+                </div>
+                <div class="button-container">
+                    <button type="button" class="btn btn-success" onClick={resetColor}>Reset</button>
                 </div>
             </div>
             <div className="color-container">
@@ -67,7 +76,7 @@ function LayoutSample() {
                     <div className="color-name align-items-center">Color Palette</div>
                 </div>
 
-                <div className="row mini-page">
+                <div className="row mini-array-page" id="base-color-array">
                     {baseColorArray.map((color, index) => (
                         <div
                             key={index}
