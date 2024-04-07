@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/minipage.css';
-
+import '../styles/fonts/simple-line-icons.min.css'
+import '../styles/fonts/font-awesome.min.css'
 function MiniHomepage1(props) {
     const { prime, secondary, sup1, sup2, sup3 } = props;
     const bodyStyle = {
@@ -51,7 +52,7 @@ function MiniHomepage1(props) {
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                                <div class="d-flex features-icons-icon"><i class="bi bi-pc-display-horizontal m-auto" style={tabStyle1} data-bss-hover-animate="pulse"></i></div>
+                                <div class="d-flex features-icons-icon"><i class=" m-auto" style={tabStyle1} data-bss-hover-animate="pulse"></i></div>
                                 <h3 style={tabStyle1}>Fully Responsive</h3>
                                 <p class="lead mb-0" style={tabStyle2}>This theme will look great on any device, no matter the size!</p>
                             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/minipage.css';
-
+import '../styles/fonts/simple-line-icons.min.css'
+import '../styles/fonts/font-awesome.min.css'
 function MiniContactpage(props) {
     const { prime, secondary, sup1, sup2, sup3 } = props;
     const bodyStyle = {
