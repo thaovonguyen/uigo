@@ -17,7 +17,7 @@ function Homepage(){
 
 
                     <div class="script" style={{width: '40%'}}>
-                        Chào bạn, chúng mình cung cấp cho các bạn scheme màu theo mong muốn và hướng dẫn sử dụng schema màu này cho 
+                        Chào bạn, chúng mình cung cấp cho các bạn scheme màu theo mong muốn và hướng dẫn sử dụng schema màu này cho việc thiết kế Website. 
                     </div>
                 </div>
                 <div class="footpage">
