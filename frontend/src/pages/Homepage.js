@@ -22,7 +22,7 @@ function Homepage(){
                 </div>
                 <div class="footpage">
                     <div>
-                        <NavLink to ="welcomepage">
+                        <NavLink to ="gen">
                             <img className="logoUI" src={muiten} alt="logoUI" />
                         </NavLink>
                     </div>

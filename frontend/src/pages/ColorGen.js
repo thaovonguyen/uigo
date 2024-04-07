@@ -6,7 +6,7 @@ import iro from '@jaames/iro';
 import '../styles/main.css';
 import ColorPalette from '../components/ColorPalette';
 import { randomFunction } from '../color_gen.js';
-// import Header from '../components/Header.js';
+import Header from '../components/Header.js';
 
 function ColorGenPage() {
     const boxPickerRef = useRef(null);
@@ -70,7 +70,7 @@ function ColorGenPage() {
 
     return (
         <div>
-            {/* <Header /> */}
+            <Header />
             <div className="Wrap Grid">
                 <div id="PickerWrap">
                     <div className="ColorPicker" id="boxPicker">
