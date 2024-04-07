@@ -5,6 +5,7 @@ import { randomFunction } from '../color_gen.js';
 import MiniHomepage1 from '../components/minihomepage1.js';
 import MiniContactpage from '../components/miniContactpage.js';
 import MiniFeature from '../components/miniFeature.js';
+import Header from '../components/Header';
 
 function LayoutSample() {
     const baseColor = '#C16F66';
@@ -28,16 +29,6 @@ function LayoutSample() {
         updatedTargetArray.splice(targetIndex, 0, draggedColor);
         setTargetArray(updatedTargetArray);
 
-        // Remove item from source array
-        // if (source === colorArray) {
-        //     const updatedColorArray = [...colorArray];
-        //     updatedColorArray.splice(index, 1);
-        //     setColorArray(updatedColorArray);
-        // } else {
-        //     const updatedBaseColorArray = [...baseColorArray];
-        //     updatedBaseColorArray.splice(index, 1);
-        //     setBaseColorArray(updatedBaseColorArray);
-        // }
     };
 
     const resetColor = () => {
@@ -50,6 +41,7 @@ function LayoutSample() {
     
     return (
         <div className="container">
+            {/* <Header/> */}
             <div className="mini-container" id = "layout-container">
                 <div className="mini-page">
                     {/* <div style={{ backgroundColor: colorArray[0] }}>This is a header</div>
