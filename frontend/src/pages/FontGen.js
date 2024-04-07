@@ -120,19 +120,24 @@ function FontGenPage() {
         document.getElementById("title-text").style.fontFamily = titleFont;
         document.getElementById("body-text").style.fontFamily = bodyFont;
     };
-
+    const [titleFontSize, setTitleFontSize] = useState(24);
+    const [bodyFontSize, setBodyFontSize] = useState(16);
     const textBiggerHandler = () => {
-        document.getElementById("title-text").style.fontSize = "2.6em";
-        document.getElementById("title-text").style.lineHeight = "1em";
-        document.getElementById("body-text").style.fontSize = "1.2em";
-        document.getElementById("body-text").style.lineHeight = "2.6em";
+        // document.getElementById("title-text").style.fontSize = "2.6em";
+        // document.getElementById("title-text").style.lineHeight = "1em";
+        setTitleFontSize(titleFontSize + 4);
+        // document.getElementById("body-text").style.fontSize = "1.2em";
+        // document.getElementById("body-text").style.lineHeight = "2.6em";
+        setBodyFontSize(bodyFontSize + 2);
     };
 
     const textSmallerHandler = () => {
-        document.getElementById("title-text").style.fontSize = "1.5em";
-        document.getElementById("title-text").style.lineHeight = ".8em";
-        document.getElementById("body-text").style.fontSize = ".8em";
-        document.getElementById("body-text").style.lineHeight = "1em";
+        // document.getElementById("title-text").style.fontSize = "1.5em";
+        // document.getElementById("title-text").style.lineHeight = ".8em";
+        // document.getElementById("body-text").style.fontSize = ".8em";
+        // document.getElementById("body-text").style.lineHeight = "1em";
+        setTitleFontSize(titleFontSize - 4);
+        setBodyFontSize(bodyFontSize - 2);
     };
 
     const alignLeftHandler = () => {
@@ -149,6 +154,13 @@ function FontGenPage() {
         document.getElementById("title-text").style.textAlign = "right";
         document.getElementById("body-text").style.textAlign = "right";
     };
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+          // Call your function here
+          // For example, you can alert the input value
+          setTitleAndBodyHandler();
+        }
+    };
 
     useEffect(() => {
         feather.replace();
@@ -156,11 +168,11 @@ function FontGenPage() {
 
     return (
         <div className="box">
-            <div className="titletext" id="title-text" onDoubleClick={setTitleFontHandler} contentEditable={true} spellCheck={false}>
+            <div style={{ fontSize: `${titleFontSize}px` }} className="titletext" id="title-text" onDoubleClick={setTitleFontHandler} contentEditable={true} spellCheck={false}>
                 {titleText}
             </div>
             <p></p>
-            <div className="bodytext" id="body-text" onDoubleClick={setBodyFontHandler} contentEditable={true} spellCheck={false}>
+            <div style={{ fontSize: `${bodyFontSize}px` }} className="bodytext" id="body-text" onDoubleClick={setBodyFontHandler} contentEditable={true} spellCheck={false}>
                 {bodyText}
             </div>
             <div className="whichfont" id="info">
@@ -173,7 +185,7 @@ function FontGenPage() {
                 <button onClick={alignCenterHandler} data-testid="align-center-button"><i data-feather="align-center"></i></button>
                 <button onClick={alignRightHandler} data-testid="align-right-button"><i data-feather="align-right"></i></button>
                 <br />
-                <button onClick={setTitleAndBodyHandler}><i data-feather="loader"></i>Change Fonts</button>
+                <button onKeyDown={handleKeyPress} onClick={setTitleAndBodyHandler}><i data-feather="loader"></i>Change Fonts</button>
                 <button onClick={switchFontsHandler}><i data-feather="shuffle"></i>Swap Fonts</button>
                 {/* <button onClick={randomiseBackgroundHandler}><i data-feather="droplet"></i>Change Color</button> */}
             </div>
