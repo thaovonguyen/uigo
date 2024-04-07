@@ -249,7 +249,7 @@
 // export default LayoutSample;
 
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import '../styles/layout.css';
 import '../styles/tab.css';
 import MiniHomepage1 from '../components/minihomepage1.js';
@@ -258,10 +258,12 @@ import MiniFeature from '../components/miniFeature.js';
 // import Header from '../components/Header';
 
 function LayoutSample() {
-    const { prime, secondary, sup1, sup2, sup3 } = useParams();
-    console.log(prime, secondary, sup1, sup2, sup3);
-    const [baseColorArray, setBaseColorArray] = useState([prime, secondary, sup1, sup2, sup3]);
-    const [colorArray, setColorArray] = useState([prime, secondary, sup1, sup2, sup3]);
+    const location = useLocation();
+    const array = location.state;
+    console.log(array);
+    const [baseColorArray, setBaseColorArray] = useState(array);
+    // const [baseColorArray, setBaseColorArray] = useState([prime, secondary, sup1, sup2, sup3]);
+    const [colorArray, setColorArray] = useState(array);
 
     const handleDragStart = (event, index, source) => {
         event.dataTransfer.setData('text/plain', JSON.stringify({ index, source }));

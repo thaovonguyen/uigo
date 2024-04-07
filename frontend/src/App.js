@@ -23,9 +23,8 @@ function App() {
           {/* <Route path="/welcomepage" element={<WelcomePage/>}/> */}
         <Route path="/" element={<Homepage/>} />
         <Route path="/gen" element={<ColorGenPage/>} />
-        <Route path="/gen/layout/:prime/:secondary/:sup1/:sup2/:sup3" element={<LayoutSample/>} />
-      </Routes>
-      
+        <Route path="/gen/layout" element={<LayoutSample/>} />
+    </Routes>
     </Router>
   );
 }
