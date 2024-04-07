@@ -1,7 +1,7 @@
 import '../styles/homepage.css';
 import logo from '../picture/logo.png'
 import { Link , NavLink} from "react-router-dom";
-
+import muiten from '../picture/muiten.png'
 import Navbar from "../Navbar"
 
 function Homepage(){
@@ -23,10 +23,10 @@ function Homepage(){
                 <div class="footpage">
                     <div>
                         <NavLink to ="welcomepage">
-                            <img className="logoUI" src={logo} alt="logoUI" />
+                            <img className="logoUI" src={muiten} alt="logoUI" />
                         </NavLink>
                     </div>
-                    Scroll to start
+                    Click to start
                 </div>            
             </div>
         </>
