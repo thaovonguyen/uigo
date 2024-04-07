@@ -30,7 +30,7 @@ function MiniHomepage1(props) {
             </nav>
             <header class="text-center text-white masthead" style={headercolor}>
                 <div class="overlay"></div>
-                <div class="container d-flex flex-column justify-content-center align-items-center" style={{ height: '500px' }}>
+                <div class="container">
                     <div class="row">
                         <div class="col-xl-9 mx-auto position-relative ">
                             <h1 class="mb-5" style={tabStyle1}>Build a landing page for your business or project and generate more leads!</h1>
