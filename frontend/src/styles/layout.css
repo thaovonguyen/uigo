@@ -18,7 +18,7 @@
 }
 
 .mini-page {
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     margin: auto;
     width: 80%;
     /* border: 3px solid green; */
@@ -36,23 +36,29 @@
 }
 
 .color-container {
-    background-color: blanchedalmond;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-left: 10%;
+   
+    
 }
 
-.mini-page {
+/* .mini-page {
     background-color: yellowgreen;
     margin: auto;
     width: 80%;
-    /* border: 3px solid green; */
-    padding: 50px 0;
     display: flex;
     flex-direction: column;
     height: 60%;
     box-shadow: 10% 2%;
-    /* grid-template-columns: auto; */
+} */
+
+#color-page {
+    padding: 10%;
+    border-radius: 2%;
+    border: 1px solid rgb(182, 181, 181);
+    background-color: rgb(234, 234, 229);
 }
 
 .layout-cell {
@@ -66,9 +72,16 @@
     height: 100%;
     margin-top: 2%;
     margin-left: 2%;
+    
 }
 
-.random-button {
+#cell-1 {
+    border-top-left-radius: 10%;
+}
+
+.color-name {
     margin-top: 10%;
-    margin-left: 2%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 120%;
 }
