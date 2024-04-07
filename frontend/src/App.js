@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/"  element={<MiniContactpage prime="#FFF94A" secondary="blue" sup1="green" sup2="red" sup3="blue"/>} />
+        <Route exact path="/"  element={<MiniHomepage1 prime="#FFF94A" secondary="blue" sup1="green" sup2="red" sup3="blue"/>} />
         {/* <Route exact path="/"  element={<Homepage />} /> 
         <Route path="/welcomepage" element={<WelcomePage/>} />
         <Route path="/homepage" element={<Homepage/>} /> */}
