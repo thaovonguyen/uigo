@@ -40,7 +40,7 @@ function monochromaticColor(baseColorHex, numColors = 5, lightnessStep = 10) {
     var colors = [];
     var baseColor = tinycolor(baseColorHex);
     var baseColorDarken = tinycolor(baseColorHex);
-    lightnessStep = getRandomNumber(10,40);
+    lightnessStep = getRandomNumber(15,30);
     for (var i = 0; i < numColors; i++) {   
         // Check if the generated color is white
         if (colors[colors.length-1] == "#ffffff") {
@@ -60,7 +60,7 @@ function monochromaticColor(baseColorHex, numColors = 5, lightnessStep = 10) {
 }
 
 function analogousColor(baseColorHex, hueVariation = 60) {
-    var saturation = getRandomNumber(0, 100);
+    var saturation = getRandomNumber(0, 80);
     var lightness = getRandomNumber(0, 100);
     var colors = [baseColorHex];
     var mono = monochromaticColor(baseColorHex, 3, 20);
@@ -81,8 +81,26 @@ function analogousColor(baseColorHex, hueVariation = 60) {
     return colors;
 }
 
+
+export function randomFunction(baseColor) {
+    const position = getRandomNumber(0,100);
+    if (position < 10) {
+        console.log('complementaryColor');
+        return complementaryColor(baseColor);
+    }
+    if (position <= 70 ) {
+        console.log('monochromaticColor');
+        return monochromaticColor(baseColor);
+    }
+    else {
+        console.log(position);
+        console.log('analogousColor');
+        return analogousColor(baseColor);
+    }
+    
+}
 // Example usage
-var hexColor = "#BFDBF7"; // Red color
-var complementary = analogousColor(hexColor);
-// var monochromatic = monochromaticColor(hexColor, 5);
-console.log("Color:", complementary);
+// var hexColor = "#808080"; // Red color
+// var complementary = randomFunction(hexColor);
+// // var monochromatic = monochromaticColor(hexColor, 5);
+// console.log("Color:", complementary);

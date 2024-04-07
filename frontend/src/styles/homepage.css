@@ -1,5 +1,9 @@
 .hpbackground{
     height: 100vh;
+    background-image :url(../picture/bg.png);
+    background-position: left, right; /* Ảnh nền sẽ nằm ở góc trái và góc phải của trang */
+    background-size: auto 200%; 
+    /* background-repeat: no-repeat; */
 }
 
 .main{
@@ -21,6 +25,7 @@
 }
 
 .footpage{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;

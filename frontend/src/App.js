@@ -10,19 +10,23 @@ import {
 
 import Homepage from './pages/Homepage';
 import WelcomePage from './pages/welcome';
-import ColorGenPage from './pages/ColorGen.js';
-import FontGenPage from './pages/FontGen.js';
-
+import MiniHomepage1 from './components/minihomepage1';
+import MiniContactpage from './components/miniContactpage';
+import MiniFeature from './components/miniFeature';
+import LayoutSample from './pages/LayoutSample';
+import ColorGenPage from './pages/ColorGen';
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Homepage />} /> 
+        {/* <Route exact path="/"  element={<LayoutSample  prime="#FFF94A" secondary="blue" sup1="green" sup2="red" sup3="blue"/>} /> */}
+        {/* <Route exact path="/"  element={<Homepage />} /> 
         <Route path="/welcomepage" element={<WelcomePage/>} />
           {/* <Route path="/welcomepage" element={<WelcomePage/>}/> */}
         <Route path="/fontgen" element={<FontGenPage/>} />
         <Route path="/colorgen" element={<ColorGenPage/>} />
       </Routes>
+      
     </Router>
   );
 }
