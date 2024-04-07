@@ -7,9 +7,9 @@ import Navbar from "../Navbar"
 function Homepage(){
     return(
         <>
-            < Navbar />
+            
             <div class="hpbackground">
-                
+            < Navbar />
                 <div class="main">
                     <div>
                         <img className="logoUI" src={logo} alt="logoUI" />
@@ -21,12 +21,22 @@ function Homepage(){
                     </div>
                 </div>
                 <div class="footpage">
-                    <div>
-                        <NavLink to ="gen">
-                            <img className="logoUI" src={muiten} alt="logoUI" />
-                        </NavLink>
+                    <div class="optionbut" >
+                        <div>
+                            <NavLink to ="gen">
+                                <img className="logoUI" src={muiten} alt="logoUI" />
+                            </NavLink>
+                        </div>
+                        Click to color generate
                     </div>
-                    Click to start
+                    <div class="optionbut">
+                        <div>
+                            <NavLink to ="fontgen">
+                                <img className="logoUI" src={muiten} alt="logoUI" />
+                            </NavLink>
+                        </div>
+                        Click to Font pair
+                    </div>
                 </div>            
             </div>
         </>

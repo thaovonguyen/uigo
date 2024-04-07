@@ -27,10 +27,18 @@
 .footpage{
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 .footpage img{
     height: 100px;
 }
+
+.optionbut{
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
