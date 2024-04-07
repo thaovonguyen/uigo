@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/layout.css';
+import '../styles/tab.css';
 import { randomFunction } from '../color_gen.js';
-import MiniHomepage from '../components/MiniHomepage1.js';
+import MiniHomepage1 from '../components/minihomepage1.js';
+import MiniContactpage from '../components/miniContactpage.js';
 
 function LayoutSample() {
     const baseColor = '#C16F66';
@@ -52,7 +54,7 @@ function LayoutSample() {
                     {/* <div style={{ backgroundColor: colorArray[0] }}>This is a header</div>
                     <div style={{ backgroundColor: colorArray[1] }}>This is the body</div>
                     <div style={{ backgroundColor: colorArray[2] }}>This is a footer</div> */}
-                    {<MiniHomepage colorArray />}
+                    {<TabComponent prime = {colorArray[0]} secondary = {colorArray[1]} sup1 = {colorArray[2]} sup2 = {colorArray[3]} sup3 = {colorArray[4]} />}
                 </div>
                 <div class="button-container">
                     <button type="button" class="btn btn-success" onClick={resetColor}>Reset</button>
@@ -92,6 +94,37 @@ function LayoutSample() {
             </div>
         </div>
     );
-}
+};
+
+const TabComponent = (props) => {
+    const {prime, second, sup1, sup2, sup3} = props
+    const [currentTab, setCurrentTab] = useState('Home Page');
+
+    const renderTabContent = (tab) => {
+        switch (tab) {
+            case 'Home Page':
+                return <MiniHomepage1 prime = {prime} secondary = {second} sup1 = {sup1} sup2 = {sup2} sup3 = {sup3}/>;
+            case 'Contact Page':
+                return <MiniContactpage prime = {prime} secondary = {second} sup1 = {sup1} sup2 = {sup2} sup3 = {sup3}/>;
+            // case 'Contact Page':
+            //     return <HolderAccountListTab />;
+            default:
+                return null;
+        }
+    };
+
+    return (
+        <div class="actlayout decentralize-tab-button">
+            <div class="row actbutton">
+                <button id="tab1"  type="button" class="col detailbutton btn btn-outline-primary" onClick={() => setCurrentTab('Home Page')}>Home Page</button>
+                <button  type="button" class="col detailbutton btn btn-outline-primary" onClick={() => setCurrentTab('Contact Page')}>Contact Page</button>
+            </div>
+            
+            {renderTabContent(currentTab)}
+            
+            
+        </div>
+    );
+}; 
 
 export default LayoutSample;
