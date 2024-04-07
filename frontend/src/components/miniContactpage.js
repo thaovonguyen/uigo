@@ -8,6 +8,13 @@ function MiniContactpage(props) {
         backgroundColor: prime, // Set background color based on the prop
         color: secondary, // Set text color based on the prop
     };
+    const bodyStyle1 = {
+        backgroundColor: secondary, // Set background color based on the prop
+        color: sup1, // Set text color based on the prop
+    };
+    const tabStyle3 = {
+        color: sup3, // Set tab color based on the prop
+    };
     const tabStyle1 = { 
         color: sup1, // Set tab color based on the prop
     };
@@ -16,7 +23,8 @@ function MiniContactpage(props) {
     };
     const headercolor={
         height: '300px',
-        backgroundColor: sup3,
+        backgroundColor: prime,
+        color: sup1,
         backgroundPosition: 'center center', // Căn giữa theo chiều ngang và dọc
         backgroundSize: 'cover' // Hiển thị hình nền để che hết khu vực header
     }
@@ -33,7 +41,7 @@ function MiniContactpage(props) {
                             <form>
                                 <div class="row">
                                     <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="text" placeholder="Enter your email..." /></div>
-                                    <div class="col-12 col-md-3"><button class="btn btn-primary btn-lg" type="submit">Sign up!</button></div>
+                                    <div class="col-12 col-md-3"><button class="btn btn-lg" type="submit" style={bodyStyle1}>Sign up!</button></div>
                                 </div>
                             </form>
                         </div>
@@ -45,21 +53,21 @@ function MiniContactpage(props) {
                     <div class="row">
                         <div class="col-lg-6 text-center text-lg-start my-auto h-100">
                             <ul class="list-inline mb-2">
-                                <li class="list-inline-item"><a href="#">About</a></li>
+                                <li class="list-inline-item"><a href="#" style={tabStyle3}>About</a></li>
                                 <li class="list-inline-item"><span>⋅</span></li>
-                                <li class="list-inline-item"><a href="#">Contact</a></li>
+                                <li class="list-inline-item"><a href="#" style={tabStyle3}>Contact</a></li>
                                 <li class="list-inline-item"><span>⋅</span></li>
-                                <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
+                                <li class="list-inline-item"><a href="#" style={tabStyle3}>Terms of &nbsp;Use</a></li>
                                 <li class="list-inline-item"><span>⋅</span></li>
-                                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                                <li class="list-inline-item"><a href="#" style={tabStyle3}>Privacy Policy</a></li>
                             </ul>
                             <p class="text-muted small mb-4 mb-lg-0">© Brand 2024. All Rights Reserved.</p>
                         </div>
                         <div class="col-lg-6 text-center text-lg-end my-auto h-100">
                             <ul class="list-inline mb-0">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw" style={tabStyle3}></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw" style={tabStyle3}></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw" style={tabStyle3}></i></a></li>
                             </ul>
                         </div>
                     </div>

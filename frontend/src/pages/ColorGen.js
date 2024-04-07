@@ -86,7 +86,7 @@ function ColorGenPage() {
                     <div className="ButtonWrap">
                         <button id="genBtn" onClick={colorGen} >Generate</button>
                         {/* <button id="layoutBtn"> Go to Layout</button> */}
-                        <Link to="/gen/layout" state={colorArray} className="button">Go to Layout</Link>
+                        <Link to="/gen/layout" state={colorArray} id="layoutBtn" >Go to Layout</Link>
                     </div>
                 </div>
 
