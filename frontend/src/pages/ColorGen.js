@@ -6,7 +6,10 @@ import { randomFunction } from '../color_gen.js';
 
 function ColorGenPage() {
     const boxPickerRef = useRef(null);
-    const [colorArray, setColorArray] = useState([])
+    const [colorArray, setColorArray] = useState(
+        randomFunction("#ff0000")
+    )
+    
 
     useEffect(() => {
         const values = document.getElementById('values');
@@ -39,10 +42,11 @@ function ColorGenPage() {
                 ].join("<br>");
 
                 hexInput.value = color.hexString;
-                const newColorArray = colorArray;
-                newColorArray[0] = color.hexString;
-                // const newColorArray = randomFunction(color.hexString);
-                setColorArray(newColorArray)
+                // const newColorArray = colorArray;
+                // colorArray = color.hexString;
+                const newColor = color.hexString;
+                const newArray = [newColor, ...colorArray.slice(1, 5)];
+                setColorArray(newArray)
             });
 
         hexInput.addEventListener('change', function () {
@@ -57,9 +61,10 @@ function ColorGenPage() {
         };
     }, []);
 
-    // const baseColor = '#C16F66';
-    // const [baseColorArray, setBaseColorArray] = useState(['#6A041D', '#F5B841', '#F4FF52', '#53FF45', '#1E2EDE']);
-    // const [colorArray, setColorArray] = useState(randomFunction(boxPickerRef.color.hexString));
+    const colorGen = () => {
+        const newColor = randomFunction(boxPickerRef.current.color.hexString);
+        setColorArray(newColor);
+    };
 
     return (
         <div className="Wrap Grid">
@@ -75,7 +80,7 @@ function ColorGenPage() {
                 </div>
 
                 <div className="ButtonWrap">
-                    <button id="genBtn">Generate</button>
+                    <button id="genBtn" onClick={colorGen} >Generate</button>
                 </div>
             </div>
 
