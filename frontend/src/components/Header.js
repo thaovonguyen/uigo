@@ -10,7 +10,10 @@ function Header(){
                     <img class="logoheader " src={logo}></img>
                 </Link>
             </div>
-            <Navbar />
+            <div>
+                <Navbar />
+            </div>
+
         </div>
     )
 }

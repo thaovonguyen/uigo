@@ -3,7 +3,7 @@ import feather from 'feather-icons';
 import '../styles/main.css';
 import '../styles/fontgen.css';
 import '../styles/font.css';
-
+import Header from '../components/Header';
 function FontGenPage() {
     const [titleText, setTitleText] = useState('Lorem Ipsum');
     const [bodyText, setBodyText] = useState(`One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.`);
@@ -167,6 +167,8 @@ function FontGenPage() {
     }, []);
 
     return (
+        <>
+        <Header/>
         <div className="box">
             <div style={{ fontSize: `${titleFontSize}px` }} className="titletext" id="title-text" onDoubleClick={setTitleFontHandler} contentEditable={true} spellCheck={false}>
                 {titleText}
@@ -190,6 +192,8 @@ function FontGenPage() {
                 {/* <button onClick={randomiseBackgroundHandler}><i data-feather="droplet"></i>Change Color</button> */}
             </div>
         </div>
+        </>
+        
     );
 }
 
