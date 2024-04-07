@@ -40,7 +40,7 @@ function monochromaticColor(baseColorHex, numColors = 5, lightnessStep = 10) {
     var colors = [];
     var baseColor = tinycolor(baseColorHex);
     var baseColorDarken = tinycolor(baseColorHex);
-    lightnessStep = getRandomNumber(10,40);
+    lightnessStep = getRandomNumber(15,30);
     for (var i = 0; i < numColors; i++) {   
         // Check if the generated color is white
         if (colors[colors.length-1] == "#ffffff") {
@@ -82,12 +82,12 @@ function analogousColor(baseColorHex, hueVariation = 60) {
 }
 
 export function randomFunction(baseColor) {
-    const position = getRandomNumber(0,3);
-    if (position < 1) {
+    const position = getRandomNumber(0,100);
+    if (position < 10) {
         console.log('complementaryColor');
         return complementaryColor(baseColor);
     }
-    if (position < 2 && position >= 1 ) {
+    if (position <= 70 ) {
         console.log('monochromaticColor');
         return monochromaticColor(baseColor);
     }
