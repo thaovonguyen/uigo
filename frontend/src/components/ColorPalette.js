@@ -1,25 +1,3 @@
-// const ColorPalette = () => {
-//     const colors = ['#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FFFF33'];
-//     return (
-//         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', flexDirection: 'column', backgroundColor: 'whitesmoke' , padding: '1vh'}}>
-//             {colors.map((color, index) => (
-//                 <div
-//                     key={index}
-//                     style={{
-//                         backgroundColor: color,
-//                         width: '20vh',
-//                         height: '20vh',
-//                         margin: '1vh',
-//                         borderRadius: '5px',
-//                     }}
-//                 />
-//             ))}
-//         </div>
-//     );
-// }
-
-// export default ColorPalette;
-
 import React, { useState } from 'react';
 import '../styles/layout.css';
 import { randomFunction } from '../color_gen.js';
@@ -46,17 +24,6 @@ function ColorPalette(prop) {
         const updatedTargetArray = [...targetArray];
         updatedTargetArray.splice(targetIndex, 0, draggedColor);
         setTargetArray(updatedTargetArray);
-
-        // Remove item from source array
-        // if (source === colorArray) {
-        //     const updatedColorArray = [...colorArray];
-        //     updatedColorArray.splice(index, 1);
-        //     setColorArray(updatedColorArray);
-        // } else {
-        //     const updatedBaseColorArray = [...baseColorArray];
-        //     updatedBaseColorArray.splice(index, 1);
-        //     setBaseColorArray(updatedBaseColorArray);
-        // }
     };
 
     const handleDragOver = (event) => {
@@ -72,12 +39,11 @@ function ColorPalette(prop) {
                             <div
                                 key={index}
                                 className="color-cell"
-                                style={{ backgroundColor: color }}
-                                // draggable
-                                // onDragStart={(event) => handleDragStart(event, index, colorArray)}
-                                // onDragOver={handleDragOver}
-                                // onDrop={(event) => handleDrop(event, index, colorArray, setColorArray)}
-                            />
+                                style={{ backgroundColor: color, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                                // onClick={() => navigator.clipboard.writeText(color.hexString)}
+                            >
+                            <p style={{ color: '#fff' }}>{color}</p>
+                            </div>
                         ))}
                     </div>
                     <div className="color-name align-items-center">Color Palette</div>
