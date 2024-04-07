@@ -23,7 +23,8 @@ function Homepage(){
                 <div class="footpage">
                     <div>
                         <NavLink to ="welcomepage">
-                            <img className="logoUI" src={logo} alt="logoUI" />
+                           
+                            <Link to = "/gen"> <img className="logoUI" src={logo} alt="logoUI" /></Link>
                         </NavLink>
                     </div>
                     Scroll to start

@@ -1,9 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useParams } from 'react';
+import { Link } from 'react-router-dom';
+
+
 import iro from '@jaames/iro';
 import '../styles/main.css';
 import ColorPalette from '../components/ColorPalette';
 import { randomFunction } from '../color_gen.js';
-import Header from '../components/Header.js';
+// import Header from '../components/Header.js';
 
 function ColorGenPage() {
     const boxPickerRef = useRef(null);
@@ -67,7 +70,7 @@ function ColorGenPage() {
 
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <div className="Wrap Grid">
                 <div id="PickerWrap">
                     <div className="ColorPicker" id="boxPicker">
@@ -82,7 +85,8 @@ function ColorGenPage() {
 
                     <div className="ButtonWrap">
                         <button id="genBtn" onClick={colorGen} >Generate</button>
-                        <button id="layoutBtn" rel="#">Go to Layout!</button>
+                        {/* <button id="layoutBtn"> Go to Layout</button> */}
+                        <Link to={`/gen/layout/${colorArray[0]}/${colorArray[1]}/${colorArray[2]}/${colorArray[3]}/${colorArray[4]}`} className="button">Go to Layout</Link>
                     </div>
                 </div>
 
@@ -96,3 +100,4 @@ function ColorGenPage() {
 }
 
 export default ColorGenPage;
+
