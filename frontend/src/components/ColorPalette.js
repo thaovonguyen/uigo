@@ -2,6 +2,21 @@ import React, { useState } from 'react';
 import '../styles/layout.css';
 import { randomFunction } from '../color_gen.js';
 
+function isBright(hexCode) {
+    // Chuyển đổi hex code thành giá trị RGB
+    let hex = hexCode.replace(/^#/, '');
+    let bigint = parseInt(hex, 16);
+    let r = (bigint >> 16) & 255;
+    let g = (bigint >> 8) & 255;
+    let b = bigint & 255;
+
+    // Tính toán độ sáng trung bình của màu
+    let brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+    // Kiểm tra xem màu có được coi là sáng hay không
+    return brightness > 127; // Đây là một giả định, bạn có thể thay đổi ngưỡng tùy ý
+}
+
 function ColorPalette(prop) {
     const { colorArray } = prop;
     const baseColor = '#C16F66';
@@ -10,6 +25,15 @@ function ColorPalette(prop) {
 
     const handleDragStart = (event, index, source) => {
         event.dataTransfer.setData('text/plain', JSON.stringify({ index, source }));
+    };
+
+    const colorText = (backgroundColor) =>{
+        if (isBright(backgroundColor)){
+            return {color: 'black'}
+        } else {
+            return {color: 'white'}
+        }
+        
     };
 
     const handleDrop = (event, targetIndex, targetArray, setTargetArray) => {
@@ -42,7 +66,7 @@ function ColorPalette(prop) {
                                 style={{ backgroundColor: color, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                                 // onClick={() => navigator.clipboard.writeText(color.hexString)}
                             >
-                            <p style={{ color: '#fff' }}>{color}</p>
+                            <p style={colorText(color)}>{color}</p>
                             </div>
                         ))}
                     </div>
