@@ -11,6 +11,7 @@ import {
 import Homepage from './pages/Homepage';
 import WelcomePage from './pages/welcome';
 import ColorGenPage from './pages/ColorGen.js';
+import LayoutSample from './pages/LayoutSample.js';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
         {/* <Route exact path="/"  element={<Homepage />} /> 
         <Route path="/welcomepage" element={<WelcomePage/>} />
           {/* <Route path="/welcomepage" element={<WelcomePage/>}/> */}
-        <Route path="/colorgen" element={<ColorGenPage/>} />
+        <Route path="/" element={<Homepage/>} />
+        <Route path="/gen" element={<ColorGenPage/>} />
+        <Route path="/gen/layout/:prime/:secondary/:sup1/:sup2/:sup3" element={<LayoutSample/>} />
       </Routes>
       
     </Router>
