@@ -8,7 +8,7 @@
 }
 
 .detailbutton.active {
-    background-color: #3A65F6;
+    background-color: #d2d4db;
     color: #fff;
     
 }
@@ -18,9 +18,12 @@
 }
 
 .actbutton {
-    width: 35%;
+    width: 500px;
+    font-size: 12px;
 }
 
 .detailbutton {
+    
     border-radius: 10% 10% 0 0;
+    width: 20px;
 } 

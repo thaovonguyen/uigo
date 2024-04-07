@@ -4,6 +4,7 @@ import '../styles/tab.css';
 import { randomFunction } from '../color_gen.js';
 import MiniHomepage1 from '../components/minihomepage1.js';
 import MiniContactpage from '../components/miniContactpage.js';
+import MiniFeature from '../components/miniFeature.js';
 
 function LayoutSample() {
     const baseColor = '#C16F66';
@@ -106,8 +107,8 @@ const TabComponent = (props) => {
                 return <MiniHomepage1 prime = {prime} secondary = {second} sup1 = {sup1} sup2 = {sup2} sup3 = {sup3}/>;
             case 'Contact Page':
                 return <MiniContactpage prime = {prime} secondary = {second} sup1 = {sup1} sup2 = {sup2} sup3 = {sup3}/>;
-            // case 'Contact Page':
-            //     return <HolderAccountListTab />;
+            case 'Feature Page':
+                return <MiniFeature prime = {prime} secondary = {second} sup1 = {sup1} sup2 = {sup2} sup3 = {sup3} />;
             default:
                 return null;
         }
@@ -116,8 +117,9 @@ const TabComponent = (props) => {
     return (
         <div class="actlayout decentralize-tab-button">
             <div class="row actbutton">
-                <button id="tab1"  type="button" class="col detailbutton btn btn-outline-primary" onClick={() => setCurrentTab('Home Page')}>Home Page</button>
-                <button  type="button" class="col detailbutton btn btn-outline-primary" onClick={() => setCurrentTab('Contact Page')}>Contact Page</button>
+                <button id="tab1"  type="button" class="col detailbutton btn btn-dark" onClick={() => setCurrentTab('Home Page')}>Home Page</button>
+                <button  type="button" class="col detailbutton btn btn-light" onClick={() => setCurrentTab('Contact Page')}>Contact Page</button>
+                <button type="button" class="col detailbutton btn btn-dark" onClick={() => setCurrentTab('Feature Page')}>Feature Page</button>
             </div>
             
             {renderTabContent(currentTab)}
