@@ -6,18 +6,29 @@ import '../styles/bootstrap.min.css'
 function MiniHomepage1(props) {
     const { prime, secondary, sup1, sup2, sup3 } = props;
     const bodyStyle = {
-        backgroundColor: prime, // Set background color based on the prop
-        color: secondary, // Set text color based on the prop
+        backgroundColor: secondary, // Set background color based on the prop
+        color: prime, // Set text color based on the prop
     };
+
+    const bodyStyle1 = {
+        backgroundColor: secondary, // Set background color based on the prop
+        color: sup1, // Set text color based on the prop
+    };
+
     const tabStyle1 = { 
         color: sup1, // Set tab color based on the prop
     };
     const tabStyle2 = { 
         color: sup2, // Set tab color based on the prop
     };
+
+    const tabStyle3 = {
+        color: sup3, // Set tab color based on the prop
+    };
+
     const headercolor={
         // height: '300px',
-        backgroundColor: sup3,
+        backgroundColor: prime,
         // backgroundPosition: 'center center', // Căn giữa theo chiều ngang và dọc
         // backgroundSize: 'cover' // Hiển thị hình nền để che hết khu vực header
     }
@@ -41,7 +52,7 @@ function MiniHomepage1(props) {
                                 <div className="col-12 col-md-9 mb-2 mb-md-0">
                                     <input className="form-control form-control-lg" type="text" placeholder="Enter your email..." />
                                 </div>
-                                    <div class="col-12 col-md-3"><button class="btn btn-lg" type="submit" style={bodyStyle}>Sign up!</button></div>
+                                    <div class="col-12 col-md-3"><button class="btn btn-lg" type="submit" style={bodyStyle1}>Sign up!</button></div>
                                 </div>
                             </form>
                         </div>
@@ -53,14 +64,14 @@ function MiniHomepage1(props) {
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                                <div class="d-flex features-icons-icon"><i class="icon-screen-desktop m-auto" style={tabStyle1} data-bss-hover-animate="pulse"></i></div>
+                                <div class="d-flex features-icons-icon"><i class="icon-screen-desktop m-auto" style={tabStyle2} data-bss-hover-animate="pulse"></i></div>
                                 <h3 style={tabStyle1}>Fully Responsive</h3>
                                 <p class="lead mb-0" style={tabStyle2}>This theme will look great on any device, no matter the size!</p>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                                <div class="d-flex features-icons-icon"><i class="icon-layers m-auto" style={tabStyle1} data-bss-hover-animate="pulse"></i></div>
+                                <div class="d-flex features-icons-icon"><i class="icon-layers m-auto" style={tabStyle2} data-bss-hover-animate="pulse"></i></div>
                                 <h3 style={tabStyle1}>Bootstrap 5 Ready</h3>
                                 <p class="lead mb-0" style={tabStyle2}>Featuring the latest build of the new Bootstrap 5 framework!</p>
                             </div>
