@@ -81,8 +81,25 @@ function analogousColor(baseColorHex, hueVariation = 60) {
     return colors;
 }
 
+export function randomFunction(baseColor) {
+    const position = getRandomNumber(0,3);
+    if (position < 1) {
+        console.log('complementaryColor');
+        return complementaryColor(baseColor);
+    }
+    if (position < 2 && position >= 1 ) {
+        console.log('monochromaticColor');
+        return monochromaticColor(baseColor);
+    }
+    else {
+        console.log(position);
+        console.log('analogousColor');
+        return analogousColor(baseColor);
+    }
+    
+}
 // Example usage
-var hexColor = "#BFDBF7"; // Red color
-var complementary = analogousColor(hexColor);
-// var monochromatic = monochromaticColor(hexColor, 5);
-console.log("Color:", complementary);
+// var hexColor = "#808080"; // Red color
+// var complementary = randomFunction(hexColor);
+// // var monochromatic = monochromaticColor(hexColor, 5);
+// console.log("Color:", complementary);
