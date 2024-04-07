@@ -12,11 +12,12 @@ import Homepage from './pages/Homepage';
 import WelcomePage from './pages/welcome';
 import MiniHomepage1 from './components/minihomepage1';
 import MiniContactpage from './components/miniContactpage';
+import MiniFeature from './components/miniFeature';
 function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/"  element={<MiniHomepage1 prime="#FFF94A" secondary="blue" sup1="green" sup2="red" sup3="blue"/>} />
+        <Route exact path="/"  element={<MiniFeature prime="#FFF94A" secondary="blue" sup1="green" sup2="red" sup3="blue"/>} />
         {/* <Route exact path="/"  element={<Homepage />} /> 
         <Route path="/welcomepage" element={<WelcomePage/>} />
         <Route path="/homepage" element={<Homepage/>} /> */}
