@@ -1,0 +1,29 @@
+.actlayout{
+    flex:1;
+}
+
+.decentralize-tab-button {
+    margin-top: 5%;
+    
+}
+
+.detailbutton.active {
+    background-color: #d2d4db;
+    color: #fff;
+    
+}
+
+#tab1 {
+    width: 30%;
+}
+
+.actbutton {
+    width: 500px;
+    font-size: 12px;
+}
+
+.detailbutton {
+    
+    border-radius: 10% 10% 0 0;
+    width: 20px;
+} 
