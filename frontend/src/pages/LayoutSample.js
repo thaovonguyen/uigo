@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/layout.css';
 import { randomFunction } from '../color_gen.js';
-import LayoutComponent from '../components/LayoutComponent.js';
+import MiniHomepage from '../components/MiniHomepage1.js';
 
 function LayoutSample() {
     const baseColor = '#C16F66';
@@ -52,7 +52,7 @@ function LayoutSample() {
                     {/* <div style={{ backgroundColor: colorArray[0] }}>This is a header</div>
                     <div style={{ backgroundColor: colorArray[1] }}>This is the body</div>
                     <div style={{ backgroundColor: colorArray[2] }}>This is a footer</div> */}
-                    {<LayoutComponent colorArray />}
+                    {<MiniHomepage colorArray />}
                 </div>
                 <div class="button-container">
                     <button type="button" class="btn btn-success" onClick={resetColor}>Reset</button>
