@@ -1,9 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import iro from '@jaames/iro';
 import '../styles/main.css';
+import ColorPalette from '../components/ColorPalette';
+import { randomFunction } from '../color_gen.js';
 
 function ColorGenPage() {
     const boxPickerRef = useRef(null);
+    const [colorArray, setColorArray] = useState([])
+
     useEffect(() => {
         const values = document.getElementById('values');
         const hexInput = document.getElementById('hexInput');
@@ -35,6 +39,10 @@ function ColorGenPage() {
                 ].join("<br>");
 
                 hexInput.value = color.hexString;
+                const newColorArray = colorArray;
+                newColorArray[0] = color.hexString;
+                // const newColorArray = randomFunction(color.hexString);
+                setColorArray(newColorArray)
             });
 
         hexInput.addEventListener('change', function () {
@@ -49,11 +57,15 @@ function ColorGenPage() {
         };
     }, []);
 
+    // const baseColor = '#C16F66';
+    // const [baseColorArray, setBaseColorArray] = useState(['#6A041D', '#F5B841', '#F4FF52', '#53FF45', '#1E2EDE']);
+    // const [colorArray, setColorArray] = useState(randomFunction(boxPickerRef.color.hexString));
+
     return (
-        <div className="Wrap">
-            {/* <div className="Grid" id="PickerWrap"> */}
+        <div className="Wrap Grid">
+            <div id="PickerWrap">
                 <div className="ColorPicker" id="boxPicker">
-                    <h3>Your Color Picker</h3>
+                    {/* <h3>Your Color Picker</h3> */}
                 </div>
                 <div id="Values">
                     <span className="title">Selected Color: </span>
@@ -65,7 +77,31 @@ function ColorGenPage() {
                 <div className="ButtonWrap">
                     <button id="genBtn">Generate</button>
                 </div>
-            {/* </div> */}
+            </div>
+
+            {/* <div className="container">
+                <div className="color-container">
+                    <div className="mini-page" id="color-page">
+                        <div className="color-palette col">
+                            {colorArray.map((color, index) => (
+                                <div
+                                    key={index}
+                                    className="color-cell"
+                                    style={{ backgroundColor: color }}
+                                    onDragStart={(event) => handleDragStart(event, index, colorArray)}
+                                    onDragOver={handleDragOver}
+                                    onDrop={(event) => handleDrop(event, index, colorArray, setColorArray)}
+                                />
+                            ))}
+                        </div>
+                        <div className="color-name align-items-center">Color Palette</div>
+                    </div>
+                </div>
+            </div> */}
+
+            <div>
+                <ColorPalette colorArray={colorArray} />
+            </div>
         </div>
     );
 }
