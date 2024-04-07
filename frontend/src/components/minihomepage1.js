@@ -23,14 +23,14 @@ function MiniHomepage1(props) {
     }
     return (
         <>
-            <nav class="navbar navbar-expand navigation-clean}" style={bodyStyle}>
+            <nav class="navbar" style={bodyStyle}>
                 <div class="container"><a class="navbar-brand" href="#"  style={tabStyle1}>Brand</a><button data-bs-toggle style={bodyStyle}></button>
                     <div class="collapse navbar-collapse" id="navcol-1"><a class="btn ms-auto "style={bodyStyle} role="button" href="#">Sign In</a></div>
                 </div>
             </nav>
             <header class="text-center text-white masthead" style={headercolor}>
                 <div class="overlay"></div>
-                <div class="container">
+                <div class="container" id="minipagecontainer">
                     <div class="row">
                         <div class="col-xl-9 mx-auto position-relative ">
                             <h1 class="mb-5" style={tabStyle1}>Build a landing page for your business or project and generate more leads!</h1>
@@ -49,7 +49,7 @@ function MiniHomepage1(props) {
                 </div>
             </header>
             <section class="text-center bg-light features-icons">
-                <div class="container">
+                <div class="lcontainer">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">

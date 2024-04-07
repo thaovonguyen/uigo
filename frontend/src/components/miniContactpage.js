@@ -22,10 +22,10 @@ function MiniContactpage(props) {
     }
     return (
         <>
-            <section class="text-center text-white call-to-action" style={headercolor}>
+            <div class="text-center text-white call-to-action" style={headercolor}>
                 <div class="overlay"></div>
                 <div class="container">
-                    <div class="container d-flex flex-column justify-content-center align-items-center" style={{ height: '300px' }} >
+                    <div class="container d-flex flex-column justify-content-center align-items-center" >
                         <div class="col-xl-9 mx-auto position-relative">
                             <h2 class="mb-4">Ready to get started? Sign up now!</h2>
                         </div>
@@ -39,7 +39,7 @@ function MiniContactpage(props) {
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
             <footer class="bg-light footer">
                 <div class="container">
                     <div class="row">

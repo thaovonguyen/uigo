@@ -3,6 +3,7 @@ import iro from '@jaames/iro';
 import '../styles/main.css';
 import ColorPalette from '../components/ColorPalette';
 import { randomFunction } from '../color_gen.js';
+import {Link} from 'react-router-dom';
 
 function ColorGenPage() {
     const boxPickerRef = useRef(null);
@@ -81,6 +82,7 @@ function ColorGenPage() {
 
                 <div className="ButtonWrap">
                     <button id="genBtn" onClick={colorGen} >Generate</button>
+                    <button id="genBtn" onClick={colorGen} > <Link to="/layout">Go to layout</Link></button>
                 </div>
             </div>
 

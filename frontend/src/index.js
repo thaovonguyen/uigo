@@ -6,12 +6,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import Homepage from './pages/Homepage';
 import LayoutSample from './pages/LayoutSample';
+import ColorGenPage from './pages/ColorGen';
+
 // import Navbar from './Navbar';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <LayoutSample />
+    <App />
+    {/* <ColorGenPage /> */}
   </React.StrictMode>
 );
 

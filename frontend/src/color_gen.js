@@ -81,23 +81,7 @@ function analogousColor(baseColorHex, hueVariation = 60) {
     return colors;
 }
 
-export function randomFunction(baseColor) {
-    const position = getRandomNumber(0,3);
-    if (position < 1) {
-        console.log('complementaryColor');
-        return complementaryColor(baseColor);
-    }
-    if (position < 2 && position >= 1 ) {
-        console.log('monochromaticColor');
-        return monochromaticColor(baseColor);
-    }
-    else {
-        console.log(position);
-        console.log('analogousColor');
-        return analogousColor(baseColor);
-    }
-    
-}
+
 export function randomFunction(baseColor) {
     const position = getRandomNumber(0,100);
     if (position < 10) {

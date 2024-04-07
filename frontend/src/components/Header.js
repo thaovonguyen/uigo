@@ -6,7 +6,7 @@ function Header(){
     return(
         <div class="headercomponent">
             <div>
-                <Link to=' '>
+                <Link to='/'>
                     <img class="logoheader " src={logo}></img>
                 </Link>
             </div>
