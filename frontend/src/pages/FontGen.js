@@ -9,9 +9,6 @@ function FontGenPage() {
     const [bodyText, setBodyText] = useState(`One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.`);
     const [titleFont, setTitleFont] = useState('Arial');
     const [bodyFont, setBodyFont] = useState('Arial');
-
-    const mytitle = document.getElementById("title-text");
-    const mybody = document.getElementById("body-text");
     const fonts = [
         "ABeeZee",
         "Abel",
@@ -97,12 +94,12 @@ function FontGenPage() {
     }
 
     const setTitleFontHandler = () => {
-        const titleFont = randomFont();
+        setTitleFont(randomFont());
         document.getElementById("title-text").style.fontFamily = titleFont;
     };
 
     const setBodyFontHandler = () => {
-        const bodyFont = randomFont();
+        setBodyFont(randomFont());
         document.getElementById("body-text").style.fontFamily = bodyFont;
     };
 
@@ -115,10 +112,8 @@ function FontGenPage() {
     };
 
     const setTitleAndBodyHandler = () => {
-        const titleFont = randomFont();
-        const bodyFont = randomFont();
-        document.getElementById("title-text").style.fontFamily = titleFont;
-        document.getElementById("body-text").style.fontFamily = bodyFont;
+        setBodyFontHandler();
+        setTitleFontHandler();
     };
     const [titleFontSize, setTitleFontSize] = useState(24);
     const [bodyFontSize, setBodyFontSize] = useState(16);
@@ -165,6 +160,16 @@ function FontGenPage() {
     useEffect(() => {
         feather.replace();
     }, []);
+    const [text, setText] = useState();
+    const handleCopyCLick = async () => {
+        try {
+            await navigator.clipboard.writeText(text)
+            alert("Copy to clipboard!")
+        }
+        catch (err) {
+            alert('Copy failed!')
+        }
+    }
 
     return (
         <>
@@ -189,6 +194,18 @@ function FontGenPage() {
                 <br />
                 <button onKeyDown={handleKeyPress} onClick={setTitleAndBodyHandler}><i data-feather="loader"></i>Change Fonts</button>
                 <button onClick={switchFontsHandler}><i data-feather="shuffle"></i>Swap Fonts</button>
+                <br />
+                Title Font: <button onClick={() => {
+                                    setText(titleFont);
+                                    handleCopyCLick();
+                                }
+                            }>{titleFont}</button>
+                <br />
+                Body Font: <button onClick={() => {
+                                    setText(bodyFont);
+                                    handleCopyCLick();
+                                }
+                            }>{bodyFont}</button>
                 {/* <button onClick={randomiseBackgroundHandler}><i data-feather="droplet"></i>Change Color</button> */}
             </div>
         </div>
